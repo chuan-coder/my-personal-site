@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 链接CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>川 • 个人博客</title>
+</head>
+<body>
+    <!-- 向上滑动锚点前置 -->
+    <a id="top"></a>
+
+    <!--导航栏顶置 -->
+    <nav class="nav">
+        <div class="nav-left">
+            <!-- 点击logo可以回到顶部 -->
+            <a href="#top"><span class="logo">川-Coder</span></a>
+        </div>
+        <div class="nav-right">
+            <ul class="nav-list">
+                <li><a href="#introduce">👦 个人介绍</a></li>
+                <li><a href="#competition">👣 比赛经历</a></li>
+                <li><a href="#work">💻 编程作品</a></li>
+                <li><a href="#course">🧠课程表</a></li>
+                <li><a href="#link">✉️ 联系我</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 下方 A4 纸张容器 -->
+    <div class="page-container">
+        <h2 id="introduce">👦 个人介绍</h2>
+        <!-- 我是一名软件工程专业的大三学生，目前在河南财经政法大学就读。专科阶段学的是大数据技术，
+         现在继续往软件开发方向深入。平时对 AI 应用、Web 系统开发比较感兴趣，喜欢动手做项目，也在持
+         续学习前端和后端的相关知识。除了写代码，我也喜欢打《皇室战争》，曾经自己组建过战队，组织过线
+         上比赛。对我来说，编程和游戏有一个共同点——都需要策略和耐心，一步步把想法变成现实。目前我正在
+         备考专升本，每天按部就班地学习，希望能在专业上走得更远。未来想做一个能真正落地的 Web 系统，
+         把大数据和 AI 结合起来，做出有价值的东西。-->
+        <p><b>简述</b>：  我是一名<strong>软件工程专业</strong>的大三学生，目前在<em>河南财经政法大学</em>就读。专科阶段学的是<b>大数据技术</b>，
+            现在继续往软件开发方向深入。除了写代码，我也喜欢打<b>《皇室战争》</b>，曾经自己组建过战队，组织过线上比赛。对我来说，编程和游戏
+            有一个共同点——都需要策略和耐心，一步步把想法变成现实。</p>
+        
+            <div class="info">
+                <ol>
+                    <li><b>姓名：</b>川-Coder</li>
+                    <li><b>学校：</b><em>河南财经政法大学</em></li>
+                    <li><b>学号：</b>2026325011053</li>
+                    <li><b>班级：</b>软件10班</li>
+                    <li><b>籍贯：</b>河南信阳</li>                    
+                    <li><b>技能与专业：</b>
+                        <ul>
+                            <li><b>掌握的语言：</b>Java, Python, Scala, HTML<sup>5</sup>, CSS<sup>3</sup> 等</li>
+                            <li><b>熟悉的框架：</b>Spring Boot, Vue, 若依, MyBatis 等</li>
+                            <li><b>使用的组件：</b>Hadoop<sub>3</sub>, Spark<sub>3</sub>, Hive, Paimon 等</li>
+                            <li><b>正在学习ing：</b>LLM(大语言模型), Agent(智能体) 等</li>
+                        </ul>
+                    </li>       
+                    <li><b>长跑爱好：</b>
+                        <ul>
+                            <li><b>五公里PB：</b>19:23</li>
+                            <li><b>十公里PB：</b>40:12</li>
+                            <li><b>半马PB：</b>1:25:14</li>
+                        </ul>
+                    </li>        
+                </ol>
+                <a href="images/runner.jpg"><img src="images/runner.jpg" alt="runner" width="500px" height="400px" style="border-radius: 20px;"></a>
+            </div>
+
+
+            <!-- 比赛经历 -->
+            <h2 id="competition">👣 比赛经历</h2>
+            <p class="competition-desc">累计斩获 <b>国·省·校</b> 三级奖项，在一次次实战中打磨技术与心态。</p>
+
+            <div class="medal-list">
+                <!-- 国赛 -->
+                <div class="medal-card medal-gold">
+                    <div class="medal-honor">🏆 国赛</div>
+                    <div class="medal-pic">
+                        <a href="images/medal01.jpg"><img src="images/medal01.jpg" alt="国赛奖牌"></a>
+                    </div>
+                    <p class="medal-name"><b>全国职业院校技能大赛</b></p>
+                    <p class="medal-text">与全国高手同台竞技，凭借扎实的基础与稳定的临场发挥突出重围。</p>
+                </div>
+
+                <!-- 省赛 -->
+                <div class="medal-card medal-silver">
+                    <div class="medal-honor">🥈 省赛</div>
+                    <div class="medal-pic">
+                        <a href="images/medal02.jpg"><img src="images/medal02.jpg" alt="省赛奖牌"></a>
+                    </div>
+                    <p class="medal-name"><b>省级技能竞赛</b></p>
+                    <p class="medal-text">团队协作、分工明确，在与兄弟院校的交流中收获宝贵经验。</p>
+                </div>
+
+                <!-- 校赛 -->
+                <div class="medal-card medal-bronze">
+                    <div class="medal-honor">🥉 校赛</div>
+                    <div class="medal-pic">
+                        <a href="images/medal03.jpg"><img src="images/medal03.jpg" alt="校赛奖牌"></a>
+                    </div>
+                    <p class="medal-name"><b>校级技能大赛</b></p>
+                    <p class="medal-text">从零起步，把课堂知识变成一个个能跑起来的小项目。</p>
+                </div>
+            </div>
+
+            <!-- 编辑作品 -->
+            <h2 id="work">💻 编程作品</h2>
+            <div class="work">
+                <br>
+                <ol>
+                    <!-- 链接works 站内跳转 -->
+                   <li><a href="works.html" target="_blank" rel="noopener">数智四诊3D大屏</a></li>
+                   <li><a href="works.html" target="_blank" rel="noopener">学生管理系统</a></li>
+                   <li><a href="works.html" target="_blank" rel="noopener">python词云图</a></li>
+                </ol>
+            </div>
+            
+            <!-- 课程表 -->
+            <h2 id="course">🧠课程表</h2>
+            <div class="course">
+                <table>
+                    <tr><th>\</th><th>星期一</th><th>星期二</th><th>星期三</th><th>星期四</th><th>星期五</th><th>星期六</th><th>星期日</th></tr>
+                    <tr>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>web编程</td>
+                        <td>计算机英语</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td>计算机网络</td>
+                        <td>操作系统</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td></td>
+                        <td>软件工程概论</td>
+                        <td></td>
+                        <td></td>
+                        <td>Java程序设计</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td></td>
+                        <td>计算机网络</td>
+                        <td>大学生职业发展</td>
+                        <td></td>
+                        <td>Java程序设计</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <!-- 联系我 -->
+            <h2 id="link">✉️ 联系我</h2>
+            <footer class="foot">
+            <p>
+                <b>📮邮箱：</b><a href="mailto:chuan@coder.com">chuan.com</a>  
+                <b>☎️电话：</b><a href="tel:190xxxx9083">190xxxx9083</a> 
+                <b>👦Github：</b><a href="mailto:chuan-Coder">chuan-Coder</a>
+            </p>
+            <br>
+            <br>
+
+            <hr>
+            <br>
+            <span>旧版个人网站：www.chuan.com</span>
+            <span>© 2026 川 · 个人电子名片 · 用奔跑和代码，持续向前</span>
+            </footer>
+
+    </div>
+</body>
+</html>
+
+
+

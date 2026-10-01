@@ -1,0 +1,297 @@
+/* 全局重置和基础设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "微软雅黑", "Microsoft YaHei", system-ui, sans-serif;
+    background-color: #f0f2f5; 
+    /* 注意：因为导航栏固定了，body 不需要再 flex 居中导航栏了，但 A4 纸还需要居中 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    /* 【关键】给 body 顶部加一个 padding，大小等于导航栏的高度(80px)，防止 A4 纸内容被导航栏挡住 */
+    padding-top: 80px; 
+}
+
+h2 { 
+    font-size: 25px; 
+    margin: 34px 0 10px; 
+    padding-left: 10px; 
+    border-left: 5px solid #333; 
+    margin-left: 80px;
+}
+p  { 
+    font-size: 17px;
+    margin: 30px 80px; 
+}
+
+/* ========== 白色顶部导航栏 ========== */
+.nav {
+    /* 【关键】固定定位：让导航栏脱离文档流，固定在屏幕顶部 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* 保证导航栏在最上层，不会被 A4 纸挡住 */
+
+    width: 100%;
+    height: 75px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 200px; /* 这里控制导航栏整体内容的左右边距 */
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Logo 样式 */
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2b50f3; 
+    margin-left: 50px;
+
+}
+
+/* 菜单列表样式 */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-right: 40px;
+}
+
+/* 菜单链接样式 */
+.nav-list a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+/* 鼠标悬停效果 */
+.nav-list a:hover {
+    color: #2b50f3;
+}
+
+/* ========== A4容器 ========== */
+.page-container {
+    width: 280mm;
+    min-height: 297mm;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+
+/* ========== 个人介绍 ========== */
+.info {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 10px 16px 14px;
+  width: 75%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.info ol {
+  width: 600px;             /* 【核心】限制列表的宽度。你可以根据内容长短自己微调这个数字 */
+  margin: 0 auto;           /* 【核心】让列表本身在盒子中水平居中 */
+  padding-top: 20px;
+  padding-left: 20px;       /* 【核心】重新给左边留 20px 的空白，把圆点还给文字 */
+  text-align: left;         /* 让列表里的文字靠左对齐，保证和圆点紧贴在一起 */
+}
+.info ul {
+  width: 500px;             /* 【核心】限制列表的宽度。你可以根据内容长短自己微调这个数字 */
+  margin: 0 auto;           /* 【核心】让列表本身在盒子中水平居中 */
+  padding-left: 20px;       /* 【核心】重新给左边留 20px 的空白，把圆点还给文字 */
+  text-align: left;         /* 让列表里的文字靠左对齐，保证和圆点紧贴在一起 */
+}
+.info li {
+    font-size: 18px;
+  margin-bottom: 5px;   /* 让每一行列表之间稍微留出一点空隙 */
+}
+
+.info::before {
+  text-align: left;
+  content: "▶ 个人简介";
+  display: block;
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+
+/* ========== 比赛经历 ========== */
+.competition-desc {
+    margin: 8px 80px 24px;
+    font-size: 17px;
+    color: #555;
+}
+
+.medal-list {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 10px 60px 20px;
+}
+
+.medal-card {
+    flex: 1;
+    max-width: 290px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-top: 4px solid #ccc;
+    border-radius: 14px;
+    padding: 18px 16px 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.medal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+}
+
+/* 金银铜三色顶边 */
+.medal-gold   { border-top-color: #f0b429; }
+.medal-silver { border-top-color: #aeb6c2; }
+.medal-bronze { border-top-color: #cd8a5d; }
+
+.medal-honor {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+.medal-gold .medal-honor   { color: #c98a06; }
+.medal-silver .medal-honor { color: #8b95a1; }
+.medal-bronze .medal-honor { color: #b06a3a; }
+
+.medal-pic {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    margin: 0 auto 14px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f4f5f7;
+    border: 1px solid #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.medal-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.25s ease;
+}
+.medal-card:hover .medal-pic img {
+    transform: scale(1.05);
+}
+
+.medal-name {
+    font-size: 17px;
+    margin: 0 0 8px;
+}
+.medal-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #777;
+    margin: 0 auto;
+}
+
+/* ========== 编程作品链接web ========== */
+.work-block {
+    margin: 0 80px 30px;
+    padding-bottom: 24px;
+    border-bottom: 1px dashed #e5e5e5;
+}
+.work-block:last-child {
+    border-bottom: none;
+}
+
+.work-block h3 {
+    font-size: 22px;
+    color: #2b50f3;
+    margin: 30px 0 10px;
+    padding-left: 0;
+    border-left: none;
+    margin-left: 0;
+}
+
+.work-intro {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin: 0 0 18px;
+    text-align: justify;
+}
+
+.work-media {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    background: #fafbfc;
+}
+.work-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.work-media-row {
+    display: flex;
+    gap: 18px;
+}
+.work-media-row img {
+    flex: 1;
+    width: 50%;
+    min-height: 220px;
+}
+
+/* ========== 编程作品 ========== */
+.work {
+    font-size: 20px;
+    padding-left:150px;
+}
+
+/* ========== 课程表 ========== */
+/* 表格与页脚 */
+.course {
+  padding: 40px;            
+  padding-left: 80px;      
+  overflow-x: auto;        
+}
+table {border-collapse: collapse;margin: 20px 0;width: 90%;font-size: 18px;}
+th, td {border: 1px solid #ccc;padding: 15px 20px;text-align: center;vertical-align: middle;}
+th {background: #f0f0f0;font-weight: bold;}
+
+/* ========== 联系我 ========== */
+.foot {
+  text-align: center; 
+  padding: 20px 0;    
+}
+
+.foot p {
+  margin: 0;         
+}
+
+.foot span {
+  display: block;     
+  font-size: 18px;
+  color: #666;        
+}
